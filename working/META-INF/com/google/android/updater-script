@@ -124,8 +124,8 @@ ui_print("Installing Boot Image...");
 package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
 ui_print("Wiping Cache Directories..");
 delete_recursive("/data/dalvik-cache/");
-delete_recursive("/cache/dalvik-cache/")
-delete_recursive("/cache")
+delete_recursive("/cache/dalvik-cache/");
+delete_recursive("/cache");
 delete_recursive("/data/tombstones");
 delete("/data/system/batterystats.bin");
 show_progress(0.100000, 0);
