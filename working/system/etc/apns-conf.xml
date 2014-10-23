@@ -408,13 +408,6 @@
       type="mms"
   />
 
-  <apn carrier="Q Internet"
-      mcc="202"
-      mnc="09"
-      apn="myq"
-      type="default,supl"
-  />
-
   <apn carrier="Q-Telecom MMS GPRS"
       mcc="202"
       mnc="09"
@@ -1299,6 +1292,25 @@
       mvno_type="spn"
   />
 
+  <apn carrier="WAP Simplicime"
+      mcc="208"
+      mnc="10"
+      proxy="192.168.21.3"
+      port="8080"
+      apn="wapdebitel"
+      type="default,supl"
+  />
+
+  <apn carrier="MMS Simplicime"
+      mcc="208"
+      mnc="10"
+      mmsc="http://mmsdebitel"
+      mmsproxy="10.143.156.3"
+      mmsport="8080"
+      apn="mmsdebitel"
+      type="mms"
+  />
+
   <apn carrier="WAP LeclercMobile"
       mcc="208"
       mnc="10"
@@ -1358,11 +1370,20 @@
       mnc="10"
       proxy="192.168.21.3"
       port="8080"
-      apn="sl2sfr"
+      apn="wapdebitel"
+      type="default,supl"
+      mvno_match_data="4C"
+      mvno_type="gid"
+  />
+
+  <apn carrier="MMS La Poste Mobile"
+      mcc="208"
+      mnc="10"
       mmsc="http://mmsdebitel"
       mmsproxy="10.143.156.3"
       mmsport="8080"
-      type="default,mms,supl"
+      apn="mmsdebitel"
+      type="mms"
       mvno_match_data="4C"
       mvno_type="gid"
   />
@@ -1565,7 +1586,7 @@
       mvno_type="gid"
   />
 
-  <apn carrier="Internet móvil"
+  <apn carrier="Internet movil"
       mcc="214"
       mnc="01"
       apn="airtelwap.es"
@@ -7892,6 +7913,20 @@
       bearer="12"
   />
 
+  <!-- EHRPD - CDMA -->
+  <apn carrier="Verizon Internet"
+      mcc="310"
+      mnc="004"
+      apn="VZWINTERNET"
+      type="default"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer="13"
+      profile_id="0"
+      modem_cognitive="true"
+      max_conns="1023"
+      max_conns_time="300"
+  />
   <apn carrier="Verizon Internet"
       mcc="310"
       mnc="004"
@@ -9704,7 +9739,35 @@
       type="mms"
   />
 
-  <apn carrier="ATT Nextgenphone"
+  <apn carrier="TFDATA"
+      mcc="310"
+      mnc="410"
+      apn="tfdata"
+      type="default,mms,supl,hipri,fota"
+      protocol="IP"
+      roaming_protocol="IP"
+      mmsc="http://mms-tf.net"
+      mmsproxy="mms3.tracfone.com"
+      mmsport="80"
+      mvno_type="gid"
+      mvno_match_data="deff"
+  />
+
+  <apn carrier="TFDATA"
+      mcc="310"
+      mnc="410"
+      apn="tfdata"
+      type="default,mms,supl,hipri,fota"
+      protocol="IP"
+      roaming_protocol="IP"
+      mmsc="http://mms-tf.net"
+      mmsproxy="mms3.tracfone.com"
+      mmsport="80"
+      mvno_type="gid"
+      mvno_match_data="ddff"
+  />
+
+  <apn carrier="ATT Phone"
       mcc="310"
       mnc="410"
       apn="nxtgenphone"
@@ -9738,34 +9801,6 @@
       mtusize="1410"
       mvno_type="gid"
       mvno_match_data="60FF"
-  />
-
-  <apn carrier="TFDATA"
-      mcc="310"
-      mnc="410"
-      apn="tfdata"
-      type="default,mms,supl,hipri,fota"
-      protocol="IP"
-      roaming_protocol="IP"
-      mmsc="http://mms-tf.net"
-      mmsproxy="mms3.tracfone.com"
-      mmsport="80"
-      mvno_type="gid"
-      mvno_match_data="deff"
-  />
-
-  <apn carrier="TFDATA"
-      mcc="310"
-      mnc="410"
-      apn="tfdata"
-      type="default,mms,supl,hipri,fota"
-      protocol="IP"
-      roaming_protocol="IP"
-      mmsc="http://mms-tf.net"
-      mmsproxy="mms3.tracfone.com"
-      mmsport="80"
-      mvno_type="gid"
-      mvno_match_data="ddff"
   />
 
   <apn carrier="CBW Data"
@@ -14231,6 +14266,19 @@
   />
 
   <!-- EHRPD - CDMA -->
+  <apn carrier="EHRPD - Verizon Internet"
+      mcc="311"
+      mnc="480"
+      apn="VZWINTERNET"
+      type="default,supl"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      bearer="13"
+      profile_id="0"
+      modem_cognitive="true"
+      max_conns="1023"
+      max_conns_time="300"
+  />
   <apn carrier="EHRPD - Verizon Internet"
       mcc="311"
       mnc="480"
@@ -20528,32 +20576,88 @@
       type="default,supl"
   />
 
-  <apn carrier="MTNL"
+  <apn carrier="Dolphin_Delhi MMS"
       mcc="404"
       mnc="68"
-      apn="mtnl.net"
-      authtype="0"
+      apn="gprsmtnldel"
       user="mtnl"
       password="mtnl123"
-      mmsc="http://mtnlmms/"
-      mmsproxy="10.10.10.10"
-      mmsport="9401"
-      type="default,mms,supl,agps,fota,dun"
+      mmsc="http://172.16.31.136/mms/"
+      mmsproxy="172.16.31.10"
+      mmsport="80"
+      type="mms"
   />
 
-  <apn carrier="MTNL"
+  <apn carrier="Dolphin_Delhi"
       mcc="404"
-      mnc="69"
-      apn="mtnl.net"
-      authtype="0"
+      mnc="68"
+      apn="gprsmtnldel"
       user="mtnl"
       password="mtnl123"
-      mmsc="http://mtnlmms/"
-      mmsproxy="10.10.10.10"
+      type="default,supl"
+  />
+
+  <apn carrier="Dolphin_Delhi_3G MMS"
+      mcc="404"
+      mnc="68"
+      apn="mtnl3g"
+      user="mtnl"
+      password="mtnl123"
+      mmsc="http://172.16.31.165/mms/"
+      mmsproxy="172.16.31.10"
       mmsport="9401"
-      type="default,mms,supl,agps,fota,dun"
-      protocol="IP"
-      roaming_protocol="IP"
+      type="mms"
+  />
+
+  <apn carrier="Dolphin_Delhi_3G"
+      mcc="404"
+      mnc="68"
+      apn="mtnl3g"
+      user="mtnl"
+      password="mtnl123"
+      type="default,supl"
+  />
+
+  <apn carrier="Dolphin_Mumbai MMS"
+      mcc="404"
+      mnc="69"
+      apn="gprsmtnlmum"
+      user="mtnl"
+      password="mtnl123"
+      mmsc="http://172.16.39.140/mms/"
+      mmsproxy="172.16.39.10"
+      mmsport="80"
+      type="mms"
+  />
+
+  <apn carrier="Dolphin_Mumbai"
+      mcc="404"
+      mnc="69"
+      apn="gprsmtnlmum"
+      user="mtnl"
+      password="mtnl123"
+      type="default,supl"
+  />
+
+  <apn carrier="Dolphin_Mumbai_3G MMS"
+      mcc="404"
+      mnc="69"
+      apn="mtnl3g"
+      user="mtnl"
+      password="mtnl123"
+      mmsc="http://172.16.31.165/mms/"
+      mmsproxy="172.16.39.10"
+      mmsport="9401"
+      type="mms"
+  />
+
+  <apn carrier="Dolphin_Mumbai_3G"
+      mcc="404"
+      mnc="69"
+      apn="mtnl3g"
+      user="mtnl"
+      password="mtnl123"
+      type="default,supl"
   />
 
   <apn carrier="Mobile Office"
@@ -25770,15 +25874,23 @@
       type="mms"
   />
 
-  <apn carrier="VIVA - KW"
+  <apn carrier="VIVA MMS"
       mcc="419"
       mnc="04"
-      apn="viva"
-      authtype="0"
+      apn="VIVA"
       mmsc="http://172.16.128.80:38090/was"
       mmsproxy="172.16.128.228"
       mmsport="8080"
-      type="default,supl,mms"
+      type="mms"
+  />
+
+  <apn carrier="VIVA INTERNET"
+      mcc="419"
+      mnc="04"
+      apn="VIVA"
+      proxy="172.16.128.228"
+      port="8080"
+      type="default,supl"
   />
 
   <apn carrier="STC - GPRS"
@@ -25850,24 +25962,32 @@
       type="mms"
   />
 
+
+
   <apn carrier="zain-Internet Wap"
       mcc="420"
       mnc="04"
       apn="zain"
-      authtype="0"
+      type="default,supl"
+  />
+
+  <apn carrier="zain WAP"
+      mcc="420"
+      mnc="04"
+      apn="zain"
+      proxy="10.122.200.10"
+      port="8080"
       type="default,supl"
   />
 
   <apn carrier="zain-mms"
       mcc="420"
       mnc="04"
-      apn="zainmms"
+      apn="zain"
       mmsc="http://10.122.200.12:8002"
       mmsproxy="10.122.200.10"
       mmsport="8080"
       type="mms"
-      protocol="IP"
-      roaming_protocol="IP"
   />
 
   <apn carrier="SabaFon"
