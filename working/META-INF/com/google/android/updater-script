@@ -88,6 +88,8 @@ symlink("/system/lib/libjpeg.so", "/system/app/GalleryGoogle/lib/arm/libjpeg.so"
 symlink("/system/lib/libfacelock_jni.so", "/system/app/FaceLock/lib/arm/libfacelock_jni.so");
 symlink("/system/lib/libbluetooth_jni.so", "/system/app/Bluetooth/lib/arm/libbluetooth_jni.so");
 symlink("/system/lib/libjni_pacprocessor.so", "/system/app/PacProcessor/lib/arm/libjni_pacprocessor.so");
+symlink("/system/lib/libdmengine.so", "/system/priv-app/lib/arm/libdmengine.so");
+symlink("/system/lib/libdmjavaplugin.so", "/system/priv-app/lib/arm/libdmjavaplugin.so");
 set_metadata("system/etc/bb.sh", "uid", 0, "gid", 0, "mode", 0755, "capabilities", 0x0);
 ui_print("Installing Busybox & symlinking Busybox Applets...");
 run_program("/etc/bb.sh");

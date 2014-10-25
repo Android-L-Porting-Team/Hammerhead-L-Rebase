@@ -9739,34 +9739,6 @@
       type="mms"
   />
 
-  <apn carrier="TFDATA"
-      mcc="310"
-      mnc="410"
-      apn="tfdata"
-      type="default,mms,supl,hipri,fota"
-      protocol="IP"
-      roaming_protocol="IP"
-      mmsc="http://mms-tf.net"
-      mmsproxy="mms3.tracfone.com"
-      mmsport="80"
-      mvno_type="gid"
-      mvno_match_data="deff"
-  />
-
-  <apn carrier="TFDATA"
-      mcc="310"
-      mnc="410"
-      apn="tfdata"
-      type="default,mms,supl,hipri,fota"
-      protocol="IP"
-      roaming_protocol="IP"
-      mmsc="http://mms-tf.net"
-      mmsproxy="mms3.tracfone.com"
-      mmsport="80"
-      mvno_type="gid"
-      mvno_match_data="ddff"
-  />
-
   <apn carrier="ATT Phone"
       mcc="310"
       mnc="410"
@@ -9801,6 +9773,34 @@
       mtusize="1410"
       mvno_type="gid"
       mvno_match_data="60FF"
+  />
+
+  <apn carrier="TFDATA"
+      mcc="310"
+      mnc="410"
+      apn="tfdata"
+      type="default,mms,supl,hipri,fota"
+      protocol="IP"
+      roaming_protocol="IP"
+      mmsc="http://mms-tf.net"
+      mmsproxy="mms3.tracfone.com"
+      mmsport="80"
+      mvno_type="gid"
+      mvno_match_data="deff"
+  />
+
+  <apn carrier="TFDATA"
+      mcc="310"
+      mnc="410"
+      apn="tfdata"
+      type="default,mms,supl,hipri,fota"
+      protocol="IP"
+      roaming_protocol="IP"
+      mmsc="http://mms-tf.net"
+      mmsproxy="mms3.tracfone.com"
+      mmsport="80"
+      mvno_type="gid"
+      mvno_match_data="ddff"
   />
 
   <apn carrier="CBW Data"
