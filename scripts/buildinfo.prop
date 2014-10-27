@@ -127,3 +127,4 @@ net.bt.name=Android
 dalvik.vm.stack-trace-file=/data/anr/traces.txt
 #Enable HD Voice
 ro.ril.enable.amr.wideband=1
+net.tethering.noprovisioning=true
