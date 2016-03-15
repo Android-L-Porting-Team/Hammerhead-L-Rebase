@@ -4,9 +4,9 @@
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
-  
+
           http://www.apache.org/licenses/LICENSE-2.0
-  
+
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -44,6 +44,7 @@
 
     <permission name="android.permission.BLUETOOTH_STACK" >
         <group gid="net_bt_stack" />
+        <group gid="wakelock" />
     </permission>
 
     <permission name="android.permission.NET_TUNNELING" >
@@ -58,23 +59,9 @@
         <group gid="log" />
     </permission>
 
-    <permission name="android.permission.READ_EXTERNAL_STORAGE" >
-        <group gid="sdcard_r" />
-    </permission>
-
-    <permission name="android.permission.WRITE_EXTERNAL_STORAGE" >
-        <group gid="sdcard_r" />
-        <group gid="sdcard_rw" />
-    </permission>
-
-    <permission name="android.permission.ACCESS_ALL_EXTERNAL_STORAGE" >
-        <group gid="sdcard_r" />
-        <group gid="sdcard_rw" />
-        <group gid="sdcard_all" />
-    </permission>
-
     <permission name="android.permission.WRITE_MEDIA_STORAGE" >
         <group gid="media_rw" />
+        <group gid="sdcard_rw" />
     </permission>
 
     <permission name="android.permission.ACCESS_MTP" >
@@ -119,6 +106,11 @@
         <group gid="audio" />
     </permission>
 
+    <permission name="android.permission.ACCESS_FM_RADIO" >
+        <!-- /dev/fm is gid media, not audio -->
+        <group gid="media" />
+    </permission>
+
     <!-- ================================================================== -->
     <!-- ================================================================== -->
     <!-- ================================================================== -->
@@ -136,6 +128,19 @@
     <assign-permission name="android.permission.WAKE_LOCK" uid="media" />
     <assign-permission name="android.permission.UPDATE_DEVICE_STATS" uid="media" />
     <assign-permission name="android.permission.UPDATE_APP_OPS_STATS" uid="media" />
+    <assign-permission name="android.permission.GET_PROCESS_STATE_AND_OOM_SCORE" uid="media" />
+
+    <assign-permission name="android.permission.MODIFY_AUDIO_SETTINGS" uid="audioserver" />
+    <assign-permission name="android.permission.ACCESS_SURFACE_FLINGER" uid="audioserver" />
+    <assign-permission name="android.permission.WAKE_LOCK" uid="audioserver" />
+    <assign-permission name="android.permission.UPDATE_DEVICE_STATS" uid="audioserver" />
+    <assign-permission name="android.permission.UPDATE_APP_OPS_STATS" uid="audioserver" />
+
+    <assign-permission name="android.permission.MODIFY_AUDIO_SETTINGS" uid="cameraserver" />
+    <assign-permission name="android.permission.ACCESS_SURFACE_FLINGER" uid="cameraserver" />
+    <assign-permission name="android.permission.WAKE_LOCK" uid="cameraserver" />
+    <assign-permission name="android.permission.UPDATE_DEVICE_STATS" uid="cameraserver" />
+    <assign-permission name="android.permission.UPDATE_APP_OPS_STATS" uid="cameraserver" />
 
     <assign-permission name="android.permission.ACCESS_SURFACE_FLINGER" uid="graphics" />
 
@@ -145,10 +150,17 @@
     <library name="android.test.runner"
             file="/system/framework/android.test.runner.jar" />
     <library name="javax.obex"
-            file="/system/framework/javax.obex.jar"/>
+            file="/system/framework/javax.obex.jar" />
+    <library name="org.apache.http.legacy"
+            file="/system/framework/org.apache.http.legacy.jar" />
 
     <!-- These are the standard packages that are white-listed to always have internet
          access while in power save mode, even if they aren't in the foreground. -->
-    <allow-in-power-save package="com.android.providers.downloads" />
+    <allow-in-power-save-except-idle package="com.android.providers.downloads" />
 
+    <!-- These are the packages that are white-listed to be able to run as system user -->
+    <system-user-whitelisted-app package="com.android.settings" />
+
+    <!-- These are the packages that shouldn't run as system user -->
+    <system-user-blacklisted-app package="com.android.wallpaper.livepicker" />
 </permissions>
