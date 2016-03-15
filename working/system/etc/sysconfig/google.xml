@@ -21,10 +21,32 @@
 
     <!-- GmsCore must always have network access for GCM and other things. -->
     <allow-in-power-save package="com.google.android.gms" />
+    <allow-in-data-usage-save package="com.google.android.gms" />
 
     <!-- Play Store likewise must have network access to support other applications. -->
-    <allow-in-power-save package="com.android.vending" />
+    <allow-in-power-save-except-idle package="com.android.vending" />
 
     <!-- If the volta app is pre-installed (for monitoring power use), let it do checkins. -->
     <allow-in-power-save package="com.google.android.volta" />
+
+    <!-- These Google applications all handle URLs to their websites by default -->
+    <app-link package="com.android.vending" />
+    <app-link package="com.google.android.apps.plus" />
+    <app-link package="com.google.android.apps.maps" />
+    <app-link package="com.google.android.youtube" />
+    <app-link package="com.google.android.apps.docs" />
+    <app-link package="com.google.android.apps.docs.editors.sheets" />
+    <app-link package="com.google.android.apps.docs.editors.slides" />
+    <app-link package="com.google.android.apps.docs.editors.docs" />
+    <app-link package="com.google.android.apps.hangouts" />
+    <app-link package="com.google.android.apps.tycho" />
+
+    <!-- These are the packages that are white-listed to be able to run as system user -->
+    <system-user-whitelisted-app package="com.android.vending" />
+    <system-user-whitelisted-app package="com.google.android.gms" />
+    <system-user-whitelisted-app package="com.google.android.play.games" />
+
+    <!-- These are the packages that are uninstalled for system user -->
+    <system-user-blacklisted-app package="com.google.android.launcher" />
+    <system-user-blacklisted-app package="com.google.android.googlequicksearchbox" />
 </config>
